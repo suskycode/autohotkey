@@ -417,7 +417,7 @@ MouseGetPos, mouseX, mouseY
 PixelGetColor, color, %mouseX%, %mouseY%, RGB
 StringRight color,color,6
 clipboard = %color%
-tooltip, 鼠标所在颜色值已发送到剪贴板
+tooltip, 颜色值:%color%已发送到剪贴板
 sleep 2000
 tooltip,
 return
@@ -456,7 +456,10 @@ ActivateAndOpen(t,p)
   }
 }
 
-#a::ActivateAndOpen("Microsoft Outlook","outlook.exe")
-#b::ActivateAndOpen("UltraEdit","C:\Program Files\UltraEdit\UltraEdit.exe")
-#w::ActivateAndOpen("Notepad","Notepad.exe")
-#g::ActivateAndOpen("GVIM","gvim.exe")
+#g::ActivateAndOpen("- GVIM","D:\Vim\vim74\gvim.exe")
++!e::ActivateAndOpen("- Eclipse","D:\DevToolsTry\eclipse-java-indigo-SR2-win32-x86_64\eclipse\eclipse.exe")
++!g::ActivateAndOpen("Chrome","C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
++!s::
+   Run https://www.google.com/search?q=%clipboard%
+Return
+^!R::ControlSend, ,{F5},  - Google Chrome
